@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071326">
+  <meta name="description" content="Davlat va huquq asoslari fanidan 30 savolli sinov testi">
+  <title>Huquq | Onlayn sinov</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Huquq test bosh sahifa">
+      <span class="brand-mark">§</span>
+      <span><b>HUQUQ<span class="brand-dot">.</span></b><small>ONLAYN SINOV PLATFORMASI</small></span>
+    </a>
+    <div class="top-status"><span class="live-dot"></span><span>30 savol</span><i></i><span>30 daqiqa</span></div>
+  </header>
+
+  <main>
+    <section id="welcomeScreen" class="welcome screen active">
+      <div class="welcome-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> DAVLAT VA HUQUQ ASOSLARI</div>
+        <h1>Bilimingizni<br><span>sinovdan</span> o‘tkazing.</h1>
+        <p class="lead">Bilimingizni tekshiring, natijangizni ko‘ring va har bir savol bo‘yicha to‘g‘ri javobni o‘rganing.</p>
+        <div class="feature-row">
+          <div class="feature"><span class="feature-icon">◷</span><span><b>30 daqiqa</b><small>Umumiy vaqt</small></span></div>
+          <div class="feature"><span class="feature-icon">▦</span><span><b>30 ta savol</b><small>Test to‘plami</small></span></div>
+          <div class="feature"><span class="feature-icon">✓</span><span><b>Natijalar</b><small>Batafsil tahlil</small></span></div>
+        </div>
+      </div>
+      <div class="welcome-card glass">
+        <div class="card-emblem"><span>§</span></div>
+        <div class="card-kicker">SINOVGA TAYYORMISIZ?</div>
+        <h2>Testni boshlash</h2>
+        <p>Davom etish uchun ism-familiyangizni kiriting.</p>
+        <form id="startForm">
+          <label for="studentName">O‘quvchi ismi</label>
+          <div class="input-wrap"><span>♙</span><input id="studentName" type="text" maxlength="70" placeholder="Ism va familiyangiz" autocomplete="name" required></div>
+          <div class="test-info"><span>Test vaqti</span><b>00:30:00</b></div>
+          <div class="test-info"><span>Savollar soni</span><b>30 ta</b></div>
+          <button class="btn btn-primary btn-wide" type="submit">Testni boshlash <span>→</span></button>
+        </form>
+        <div class="privacy-note">Javoblaringiz test tugaguncha baholanmaydi.</div>
+      </div>
+    </section>
+
+    <section id="quizScreen" class="quiz-screen screen">
+      <div class="quiz-heading">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> DAVLAT VA HUQUQ ASOSLARI</div><h1>Bilimingizni sinang</h1></div>
+        <div class="timer-box"><span class="timer-icon">◷</span><div><small>QOLGAN VAQT</small><strong id="timer">30:00</strong></div></div>
+      </div>
+      <div class="progress-wrap"><div class="progress-label"><span>Test jarayoni</span><b id="progressText">1 / 30</b></div><div class="progress-track"><div id="progressBar"></div></div></div>
+      <div class="quiz-layout">
+        <aside class="question-nav glass">
+          <div class="side-title"><div><span class="side-title-icon">▦</span><b>Savollar</b></div><small><span id="answeredCount">0</span>/30</small></div>
+          <p class="side-hint">Savolga o‘tish uchun raqamini bosing.</p>
+          <div id="questionGrid" class="question-grid"></div>
+          <div class="legend"><span><i class="legend-current"></i> Joriy</span><span><i class="legend-done"></i> Belgilangan</span></div>
+          <div class="side-note"><span>ⓘ</span> To‘g‘ri javoblar test yakunida ko‘rsatiladi.</div>
+        </aside>
+        <section class="question-panel glass">
+          <div class="question-top"><span id="questionTag" class="question-tag">SAVOL 01</span><span class="question-sub">HUQUQ FANIDAN TEST</span></div>
+          <h2 id="questionText">Savol matni</h2>
+          <div id="optionsList" class="options-list"></div>
+          <div class="question-footer"><button id="prevBtn" class="btn btn-ghost" type="button">← <span>Oldingi</span></button><span id="questionFooterCount">1 / 30</span><button id="nextBtn" class="btn btn-primary" type="button"><span>Keyingi</span> →</button></div>
+        </section>
+      </div>
+      <div class="finish-row"><span>Javoblaringiz avtomatik saqlanib boradi.</span><button id="finishBtn" class="btn btn-finish" type="button">Testni yakunlash <span>✓</span></button></div>
+    </section>
+
+    <section id="resultScreen" class="result-screen screen">
+      <div class="result-heading"><div class="eyebrow"><span class="eyebrow-line"></span> TEST YAKUNLANDI</div><h1>Natijangiz, <span id="resultName">o‘quvchi</span></h1><p>Quyida javoblaringiz va har bir savolning to‘g‘ri javobi bilan tanishishingiz mumkin.</p></div>
+      <div class="result-summary glass">
+        <div class="score-ring" id="scoreRing"><div><strong id="scorePercent">0%</strong><small>Natija</small></div></div>
+        <div class="summary-stat"><span class="stat-icon">✓</span><small>To‘g‘ri javob</small><strong id="correctTotal">0 / 30</strong></div>
+        <div class="summary-stat"><span class="stat-icon wrong-icon">×</span><small>Noto‘g‘ri javob</small><strong id="wrongTotal">30</strong></div>
+        <div class="summary-stat"><span class="stat-icon time-icon">◷</span><small>Sarflangan vaqt</small><strong id="elapsedTime">00:00</strong></div>
+      </div>
+      <div class="review-heading"><div><h2>Javoblar tahlili</h2><p>Har bir savolni ochib, javobingiz va izohni ko‘ring.</p></div><div class="review-filters"><button class="filter-btn active" data-filter="all">Barchasi</button><button class="filter-btn" data-filter="wrong">Xatolar</button></div></div>
+      <div id="reviewList" class="review-list"></div>
+      <section class="teacher-card glass">
+        <div class="teacher-icon">♙</div><div class="teacher-info"><small>TEST MUALLIFI / O‘QITUVCHI</small><h2>Murodov Nurbek</h2><p>Davlat va huquq asoslari</p></div>
+        <div class="teacher-links">
+          <a href="https://t.me/Nurbek_7168" target="_blank" rel="noopener noreferrer">↗ Telegram akkaunt <b>@Nurbek_7168</b></a>
+          <a href="https://t.me/TARIXHUQUQNURBEK" target="_blank" rel="noopener noreferrer">↗ Telegram kanal <b>@TARIXHUQUQNURBEK</b></a>
+          <a href="tel:+998995387168">☎ Bog‘lanish <b>+998 99 538 71 68</b></a>
+        </div>
+      </section>
+      <div class="result-actions"><button id="restartBtn" class="btn btn-primary">Qayta topshirish ↻</button><button id="printBtn" class="btn btn-ghost">Natijani chop etish ⎙</button></div>
+      <p class="disclaimer">Izohlar o‘rganishga yordam beruvchi qisqa tushuntirishlardir. Rasmiy huquqiy masalalarda amaldagi qonun hujjatlarini tekshiring.</p>
+    </section>
+  </main>
+  <footer class="footer"><span>§</span> HUQUQ <i>•</i> BILIM — ADOLAT ASOSI</footer>
+
+  <div id="confirmModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-symbol">?</div><h2 id="modalTitle">Testni yakunlaysizmi?</h2><p id="modalMessage">Belgilanmagan savollar bor. Testni yakunlaganingizdan so‘ng javoblarni o‘zgartirib bo‘lmaydi.</p>
+      <div class="modal-actions"><button id="cancelFinish" class="btn btn-ghost">Davom etish</button><button id="confirmFinish" class="btn btn-primary">Yakunlash</button></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
